@@ -1,0 +1,45 @@
+import { navLinks } from "@/constants";
+import Link from "next/link";
+import React from "react";
+import GlobalSearch from "./global-search";
+import LanguageDropdown from "@/components/shared/language-dropdown";
+import ModeToggle from "@/components/shared/mode-toggle";
+import { Button } from "@/components/ui/button";
+
+const Navbar = () => {
+  return (
+    <div className="fixed inset-0 z-40 h-20 bg-background/70 backdrop-blur-xl">
+      <div className="container mx-auto max-w-7xl h-full flex justify-between items-center border-b">
+        <div className="flex items-center gap-4">
+          <h1 className="text-xl text-foreground font-roboto">OnlyCourses</h1>
+          <div className="flex items-center gap-3 border-b pl-2">
+            {navLinks.map((nav) => (
+              <Link
+                href={`/${nav.route}`}
+                key={nav.route}
+                className="font-medium transition-all hover:text-blue-500 hover:underline"
+              >
+                {nav.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 border-r pr-3">
+            <GlobalSearch />
+            <LanguageDropdown />
+            <ModeToggle />
+          </div>
+          <Button variant={"ghost"} size={"lg"} rounded={"full"}>
+            Log In
+          </Button>
+          <Button variant={"ghost"} size={"lg"} rounded={"full"}>
+            Sign Up
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
