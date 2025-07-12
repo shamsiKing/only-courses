@@ -5,6 +5,7 @@ import { ChildProps } from "@/types";
 import { ThemeProvider } from "@/components/providers/theme-providers";
 import { languages } from "@/i18next/settings";
 import { dir } from "i18next";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const roboto = Roboto({
   weight: ["100", "300", "500", "700", "900"],
@@ -33,19 +34,21 @@ interface Props extends ChildProps {
 
 export default function RootLayout({ children, params: { lng } }: Props) {
   return (
-    <html lang="en" dir={dir(lng)} suppressHydrationWarning>
-      <body
-        className={`${roboto.variable} ${spaceGrotesk.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+    <ClerkProvider>
+      <html lang="en" dir={dir(lng)} suppressHydrationWarning>
+        <body
+          className={`${roboto.variable} ${spaceGrotesk.variable} antialiased`}
         >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
