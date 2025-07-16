@@ -1,3 +1,4 @@
+"use client";
 import { navLinks } from "@/constants";
 import Link from "next/link";
 import React from "react";
@@ -5,6 +6,8 @@ import GlobalSearch from "./global-search";
 import LanguageDropdown from "@/components/shared/language-dropdown";
 import ModeToggle from "@/components/shared/mode-toggle";
 import { Button } from "@/components/ui/button";
+import { SignInButton, SignUpButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import UserBox from "@/components/shared/user-box";
 
 const Navbar = () => {
   return (
@@ -30,12 +33,21 @@ const Navbar = () => {
             <LanguageDropdown />
             <ModeToggle />
           </div>
-          <Button variant={"ghost"} size={"lg"} rounded={"full"}>
-            Log In
-          </Button>
-          <Button variant={"ghost"} size={"lg"} rounded={"full"}>
-            Sign Up
-          </Button>
+          <SignedIn>
+            <UserBox />
+          </SignedIn>
+          <SignedOut>
+            <SignInButton mode="modal">
+              <Button variant={"ghost"} size={"lg"} rounded={"full"}>
+                Log In
+              </Button>
+            </SignInButton>
+            <SignUpButton mode="modal">
+              <Button variant={"ghost"} size={"lg"} rounded={"full"}>
+                Sign Up
+              </Button>
+            </SignUpButton>
+          </SignedOut>
         </div>
       </div>
     </div>

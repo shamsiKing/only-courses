@@ -1,19 +1,16 @@
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
-import CreateMiddleware from "next-intl/middleware";
-import { routing } from "./i18next/routing";
+import { authMiddleware } from "@clerk/nextjs";
+import createMiddleware from "next-intl/middleware";
 
-const intlMiddleware = CreateMiddleware(routing);
+const intlMiddleware = createMiddleware({
+  locales: ["en", "ru", "uz", "tr"],
+  defaultLocale: "en",
+});
 
-const isProtectedRoute = createRouteMatcher(["/:lng/courses"]);
-
-export default clerkMiddleware((auth, req) => {
-  const intlRequest = intlMiddleware(req);
-  if (isProtectedRoute(req)) {
-    auth.protect;
-  }
-  return intlRequest;
+export default authMiddleware({
+  beforeAuth: (req) => intlMiddleware(req),
+  publicRoutes: ["/:lng"],
 });
 
 export const config = {
-  matcher: ["/(ru|uz|en|tr)/((?!api|_next|.*\\..*).*)"],
+  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
 };

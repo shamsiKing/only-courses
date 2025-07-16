@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/providers/theme-providers";
 import { languages } from "@/i18next/settings";
 import { dir } from "i18next";
 import { ClerkProvider } from "@clerk/nextjs";
+import { localization } from "@/lib/utils";
 
 const roboto = Roboto({
   weight: ["100", "300", "500", "700", "900"],
@@ -33,8 +34,9 @@ interface Props extends ChildProps {
 }
 
 export default function RootLayout({ children, params: { lng } }: Props) {
+  const local = localization(lng);
   return (
-    <ClerkProvider>
+    <ClerkProvider localization={local}>
       <html lang="en" dir={dir(lng)} suppressHydrationWarning>
         <body
           className={`${roboto.variable} ${spaceGrotesk.variable} antialiased`}
