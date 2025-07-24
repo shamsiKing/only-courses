@@ -53,7 +53,7 @@ function AllCourses() {
 
       <div className="mt-2 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {courses.map((course, index) => (
-          <CourseCard key={index} {...course} />
+          <CourseCard key={index} course={course} />
         ))}
       </div>
     </div>
