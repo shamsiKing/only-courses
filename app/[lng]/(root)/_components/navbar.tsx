@@ -8,6 +8,7 @@ import ModeToggle from "@/components/shared/mode-toggle";
 import { Button } from "@/components/ui/button";
 import { SignInButton, SignUpButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import UserBox from "@/components/shared/user-box";
+import Mobile from "@/components/shared/mobile";
 
 const Navbar = () => {
   return (
@@ -15,7 +16,7 @@ const Navbar = () => {
       <div className="container mx-auto max-w-7xl h-full flex justify-between items-center border-b">
         <div className="flex items-center gap-4">
           <h1 className="text-xl text-foreground font-roboto">OnlyCourses</h1>
-          <div className="flex items-center gap-3 border-b pl-2">
+          <div className="flex max-md:hidden items-center gap-3 border-b pl-2">
             {navLinks.map((nav) => (
               <Link
                 href={`/${nav.route}`}
@@ -28,26 +29,29 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <div className="flex items-center gap-2 border-r pr-3">
+          <Mobile />
+          <div className="flex max-md:hidden items-center gap-2 border-r pr-3">
             <GlobalSearch />
             <LanguageDropdown />
             <ModeToggle />
           </div>
-          <SignedIn>
-            <UserBox />
-          </SignedIn>
-          <SignedOut>
-            <SignInButton mode="modal">
-              <Button variant={"ghost"} size={"lg"} rounded={"full"}>
-                Log In
-              </Button>
-            </SignInButton>
-            <SignUpButton mode="modal">
-              <Button variant={"ghost"} size={"lg"} rounded={"full"}>
-                Sign Up
-              </Button>
-            </SignUpButton>
-          </SignedOut>
+          <div className="max-sm:hidden">
+            <SignedIn>
+              <UserBox />
+            </SignedIn>
+            <SignedOut>
+              <SignInButton mode="modal">
+                <Button variant={"ghost"} size={"lg"} className="rounded-full">
+                  Log In
+                </Button>
+              </SignInButton>
+              <SignUpButton mode="modal">
+                <Button variant={"ghost"} size={"lg"} className="rounded-full">
+                  Sign Up
+                </Button>
+              </SignUpButton>
+            </SignedOut>
+          </div>
         </div>
       </div>
     </div>

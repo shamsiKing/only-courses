@@ -27,7 +27,7 @@ const LanguageDropdown = () => {
           <Languages />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuContent className="w-56 bg-background rounded-md">
         <DropdownMenuGroup>
           {lngs.map((item) => (
             <Link key={item.route} href={item.route}>
