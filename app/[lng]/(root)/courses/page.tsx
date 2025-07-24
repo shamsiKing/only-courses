@@ -1,7 +1,13 @@
 import React from "react";
-
+import TopBar from "@/components/shared/top-bar";
+import AllCourses from "./_components/all-courses";
 const CoursesPage = () => {
-  return <div className="mt-32 text-green-600">CoursesPage</div>;
+  return (
+    <>
+      <TopBar label="allCourses" description="allCourseDescription" />
+      <AllCourses />
+    </>
+  );
 };
 
 export default CoursesPage;

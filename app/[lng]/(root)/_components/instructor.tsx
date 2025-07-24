@@ -1,5 +1,6 @@
 "use client";
 
+import InstructorCard from "@/components/cards/instructorcard";
 import { Button } from "@/components/ui/button";
 import { instructors } from "@/constants";
 import useTranslate from "@/hooks/use-translate";
@@ -30,10 +31,9 @@ function Instructor() {
       </div>
 
       <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {instructors.map(
-          (item) => item.name
-          //<InstructorCard key={item.name} {...item} /> paka card yoq
-        )}
+        {instructors.map((item) => (
+          <InstructorCard key={item.name} instructor={item} />
+        ))}
       </div>
 
       <div className="mt-6 text-center text-sm">

@@ -1,5 +1,6 @@
 "use client";
 
+import CourseCard from "@/components/cards/courseCard";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -46,9 +47,9 @@ function FeaturedCourses() {
         </div>
       </div>
       <div className="mt-4 flex flex-col space-y-4 md:hidden">
-        {courses.map(
-          (course) => course.title //<CourseCard key={course.title} {...course} />
-        )}
+        {courses.map((course) => (
+          <CourseCard key={course.title} course={course} />
+        ))}
       </div>
       <Carousel
         opts={{ align: "start" }}
@@ -60,7 +61,7 @@ function FeaturedCourses() {
               key={course.title}
               className="md:basis-1/2 lg:basis-1/3"
             >
-              {/*<CourseCard {...course} /> paka kurs yoq ekan*/}
+              <CourseCard course={course} />
             </CarouselItem>
           ))}
         </CarouselContent>

@@ -81,26 +81,22 @@ export const categories = [
 export const instructors = [
   {
     name: "Chris Impley",
-    image:
-      "https://blog.sammi.app/_next/image?url=https://media.graphassets.com/km6vx9k0r8jYk63btttv&w=1920&q=75",
+    image: "/assets/instructors/instructor1.jpg",
     job: "Web Developer",
   },
   {
     name: "Thomas Winter",
-    image:
-      "https://blog.sammi.app/_next/image?url=https://media.graphassets.com/d72ZspAPTq2lGV3T5A8w=3840&q=75",
+    image: "/assets/instructors/instructor2.jpg",
     job: "Photographer",
   },
   {
     name: "Emma Watson",
-    image:
-      "https://blog.sammi.app/_next/image?url=https://media.graphassets.com/nbwJXtMQuvylp1jzBmoqB&w=3840&q=75",
+    image: "/assets/instructors/instructor3.jpg",
     job: "Digital Marketer",
   },
   {
     name: "John Doe",
-    image:
-      "https://static.independent.co.uk/2023/06/11/08/5efbdacbeee4f50e8ab7f21f23a60807?quality=75&width=990&crop=3:2,smart&auto=webp",
+    image: "/assets/instructors/instructor4.jpg",
     job: "Designer",
   },
 ];
@@ -131,10 +127,9 @@ export const learningJourney = [
 export const courses = [
   {
     title: "JavaScript",
-    previewImage:
-      "https://sammi.ac/_next/image?url=https://utfs.io/f/35ca3db9-fb43-4f12-bd48-8b08aa5e03bb-k1lwdj.png&w=1920&q=75",
+    previewImage: "/assets/courses/js.jpg",
     author: {
-      image: "https://media.graphassets.com/KmuGV9XoRjYhKG3bZttvc&w=1920&q=75",
+      image: "/assets/courses/authors/author1.jpg",
       name: "Chris Impley",
     },
     oldPrice: 179,
@@ -143,10 +138,9 @@ export const courses = [
   },
   {
     title: "ReactJS",
-    previewImage:
-      "https://sammi.ac/_next/image?url=https://utfs.io/f/a8573b7c-9b52-4459-8414-8eacde8740ba-k1lwd1.png&w=1920&q=75",
+    previewImage: "/assets/courses/ReactJs.jpg",
     author: {
-      image: "https://media.graphassets.com/KmuGV9XoRjYhKG3bZttvc&w=1920&q=75",
+      image: "/assets/courses/authors/author2.jpg",
       name: "Chris Impley",
     },
     oldPrice: 159,
@@ -155,10 +149,9 @@ export const courses = [
   },
   {
     title: "VueJS",
-    previewImage:
-      "https://sammi.ac/_next/image?url=https://utfs.io/f/bddfc919-2260-46dd-a078-b956bd9a377c-k1lwcq.png&w=1920&q=75",
+    previewImage: "/assets/courses/vue.jpg",
     author: {
-      image: "https://media.graphassets.com/KmuGV9XoRjYhKG3bZttvc&w=1920&q=75",
+      image: "/assets/courses/authors/author3.jpg",
       name: "Chris Impley",
     },
     oldPrice: 129,
@@ -167,10 +160,9 @@ export const courses = [
   },
   {
     title: "Telegram BOT",
-    previewImage:
-      "https://sammi.ac/_next/image?url=https://utfs.io/f/1662922d-b61d-401b-aa1a-693a6231d8aa-k1lw9a.png&w=1920&q=75",
+    previewImage: "/assets/courses/Tbot.jpg",
     author: {
-      image: "https://media.graphassets.com/KmuGV9XoRjYhKG3bZttvc&w=1920&q=75",
+      image: "/assets/courses/authors/author4.jpg",
       name: "Chris Impley",
     },
     oldPrice: 209,
@@ -179,10 +171,9 @@ export const courses = [
   },
   {
     title: "React Native",
-    previewImage:
-      "https://sammi.ac/_next/image?url=https://utfs.io/f/2f7f74594-ae28-4fe1-86ce-964a5c89c78d-k1lw7k.png&w=1920&q=75",
+    previewImage: "/assets/courses/reactNative.jpg",
     author: {
-      image: "https://media.graphassets.com/KmuGV9XoRjYhKG3bZttvc&w=1920&q=75",
+      image: "/assets/courses/authors/author5.jpg",
       name: "Chris Impley",
     },
     oldPrice: 129,
@@ -191,10 +182,9 @@ export const courses = [
   },
   {
     title: "Foundation",
-    previewImage:
-      "https://sammi.ac/_next/image?url=https://utfs.io/f/bc6dfb541-3300-438f-b8b2-ffefb57dfe56-k1lw6p.png&w=1920&q=75",
+    previewImage: "/assets/courses/foundation.jpg",
     author: {
-      image: "https://media.graphassets.com/KmuGV9XoRjYhKG3bZttvc&w=1920&q=75",
+      image: "/assets/courses/authors/author6.jpg",
       name: "Chris Impley",
     },
     oldPrice: 129,
