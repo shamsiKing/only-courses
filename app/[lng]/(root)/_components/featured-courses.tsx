@@ -30,13 +30,13 @@ function FeaturedCourses() {
           </p>
         </div>
 
-        <div className="flex items-center gap-1 self-end max-md:mt-4 max-md:w-full max-md:rounded-full max-md:bg-primary max-md:p-2">
+        <div className="grid grid-cols-4 items-center max-md:w-full gap-1 self-end max-md:mt-4 max-md:rounded-full max-md:bg-primary-foreground max-md:p-2">
           {filterCourses.map((item) => (
             <Button
               key={item.name}
-              variant={filter === item.name ? "secondary" : "ghost"}
+              variant={filter === item.name ? "outline" : "ghost"}
               className={cn(
-                "rounded-full font-medium max-md:w-full max-md:bg-secondary",
+                "rounded-full font-medium w-full max-md:bg-secondary",
                 filter === item.name && "text-primary"
               )}
               onClick={() => setFilter(item.name)}

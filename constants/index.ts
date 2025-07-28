@@ -41,7 +41,6 @@ export const companies = [
   DiStylus,
   DiYahoo,
   DiDjango,
-  DiDocker,
 ];
 
 export const filterCourses = [
